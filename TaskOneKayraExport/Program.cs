@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TaskOneKayraExport.Data.Context;
+using TaskOneKayraExport.Data.ProductMapper;
+using TaskOneKayraExport.Data.Repository;
+using TaskOneKayraExport.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("PostgresConnection");
 builder.Services.AddDbContext<ProductDbContext>(options => options.UseNpgsql(connectionString));
 
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<ProductRepository>();
 
-
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<ProductMapper>();
+});
 
 
 

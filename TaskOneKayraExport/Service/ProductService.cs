@@ -20,7 +20,7 @@ namespace TaskOneKayraExport.Service
 
         }
 
-        public async Task<ProductResponseDto> Add(ProductRequestDto dto)
+        public async Task<ProductResponseDto> AddAsync(ProductRequestDto dto)
         {
             var result= await _repository.Add(_mapper.Map<Product>(dto));
             return _mapper.Map<ProductResponseDto>(result);
