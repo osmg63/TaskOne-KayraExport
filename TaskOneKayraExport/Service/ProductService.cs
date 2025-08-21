@@ -28,10 +28,6 @@ namespace TaskOneKayraExport.Service
         public async Task<bool> Delete(int id)
         {
             var data = await _repository.Get(x => x.Id == id);
-            if (data == null) {
-                throw new Exception("product not found");
-                
-            }
             return await _repository.Delete(data);
         }
         public async Task<List<ProductResponseDto>> GetAll()

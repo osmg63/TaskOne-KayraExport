@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SendGrid.Helpers.Errors.Model;
 using TaskOneKayraExport.Dto;
 using TaskOneKayraExport.Service;
 
@@ -29,6 +30,7 @@ namespace TaskOneKayraExport.Controllers
             return Ok(data);
 
         }
+     
         [HttpPost]
         public async Task<IActionResult> Add(ProductRequestDto dto)
         {
@@ -46,7 +48,6 @@ namespace TaskOneKayraExport.Controllers
         {
            var data= await _productService.Delete(id);
             return Ok(data);
-
         }
 
 
