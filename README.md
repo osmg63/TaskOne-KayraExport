@@ -23,7 +23,7 @@ Projede PostgreSQL kullanılmaktadır. `appsettings.json` dosyasında aşağıda
 
 - **Host:** Veritabanı sunucunuz (örneğin: localhost)  
 - **Port:** PostgreSQL portu (varsayılan: 5432)  
-- **Database:** Kullanılacak veritabanı adı (`TaskTwo`)  
+- **Database:** Kullanılacak veritabanı adı (`Product`)  
 - **Username / Password:** PostgreSQL kullanıcı adı ve şifre  
 
 
